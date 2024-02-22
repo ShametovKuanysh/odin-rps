@@ -7,10 +7,33 @@ function getComputerChoice(){
 
     switch (num) {
         case 0:
-            return 'Rock'
+            return 'rock'
         case 1:
-            return 'Paper'
+            return 'paper'
         default:
-            return 'Scissors'
+            return 'scissors'
     }
 }
+
+const actNums = new Map()
+actNums['rock'] = 0
+actNums['paper'] = 1
+actNums['scissors'] = 2
+
+function playRound(userSelect, compSelect){
+    const us = userSelect.toLowerCase()
+    console.log('User choice ', us)
+    console.log('Computer choice ', compSelect)
+    if (us == compSelect){
+        return 'Even'
+    } else if (actNums[us] + 1 == actNums[compSelect]){
+        return 'Computer wins'
+    } else if (actNums[compSelect] + 1 == actNums[us]){
+        return 'User wins'
+    } else {
+        return compSelect > us ? 'User wins' : 'Computer wins'
+    }
+
+}
+
+console.log(playRound('paper', getComputerChoice()))
