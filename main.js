@@ -33,7 +33,16 @@ function playRound(userSelect, compSelect){
     } else {
         return compSelect > us ? 'User wins' : 'Computer wins'
     }
-
 }
 
-console.log(playRound('paper', getComputerChoice()))
+function playGame(){
+    for (let i = 0; i < 5; i++){
+        const us = prompt("Enter your selection")
+        const cs = getComputerChoice()
+
+        console.log(playRound(us, cs))
+    }
+    
+}
+
+playGame()
