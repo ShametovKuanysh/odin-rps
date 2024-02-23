@@ -5,6 +5,25 @@
         <script src="main.js"></script>
     </head>
     <body>
-        <button onclick="getComputerChoice()">Click me</button>
+        <button onclick="playRound('rock',getComputerChoice())">Rock</button>
+        <button onclick="playRound('paper',getComputerChoice())">Paper</button>
+        <button onclick="playRound('scissors',getComputerChoice())">Scissors</button>
+    
+        <div id="winner"></div>
+        <div id="results"></div>
+        <div>
+            <table>
+                <tr>
+                    <th>User</th>
+                    <th>Even</th>
+                    <th>Computer</th>
+                </tr>
+                <tr>
+                    <td id="user"></td>
+                    <td id="even"></td>
+                    <td id="comp"></td>
+                </tr>
+            </table>
+        </div>
     </body>
 </html>
